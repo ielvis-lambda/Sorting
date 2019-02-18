@@ -8,7 +8,7 @@ def selection_sort(arr):
         smallest_index = cur_index
         # TO-DO: Separate the first element from the rest of the array. Think about it as a sorted list of one element.
         for j in range(i, len(arr)):
-                                                                                                                                        # from the i'th position to the end of the array if j is smaller than the current value then j is the current smallest index
+                                                                        # from the i'th position to the end of the array if j is smaller than the current value then j is the current smallest index
             if arr[j] < arr[smallest_index]:
                 smallest_index = j
         print(f"SMALLEST ELEMENT: {arr[smallest_index]}")
@@ -31,24 +31,22 @@ def selection_sort(arr):
 
 # TO-DO: implement the Insertion Sort function below
 def insertion_sort(arr):
+
     # Algorithm
     # Separate the first element from the rest of the array. Think about it as a sorted list of one element.
     # For all other indices, beginning with [1]:
     # a. Copy the item at that index into a temp variable
     for i in range(1, len(arr)):
-        # print(f"LOOP {i}")
-        # print(f"{arr}")
+        print(f"LOOP {i}")
+        print(f"{arr}")
         temp = arr[i]
     # b. Iterate to the left until you find the correct index in the "sorted" part of the array at which this element should be inserted
         j = i
-        # print(f"I'm temp or arr at j: {arr[j]}")
         while j > 0 and temp < arr[j-1]:
             # Shift items over to the right as you iterate
-            arr[j] = arr[j - 1]
-            j -= 1
-            # print(arr)
-        # c. When the correct index is found, copy temp into this position
-        # print(f"SMALLEST ELEMENT: {temp}")
+            # c. When the correct index is found, copy temp into this position
+        	arr[j] = arr[j - 1]
+        j -= 1
         arr[j] = temp
     return arr
 
@@ -57,7 +55,6 @@ def insertion_sort(arr):
 arr = [2, 5, 9, 7, 4, 1, 3, 8, 6]
 print(arr)
 arr = insertion_sort(arr)
-print(arr)
 
 
 # STRETCH: implement the Bubble Sort function below
